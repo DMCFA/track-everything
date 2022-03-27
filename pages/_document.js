@@ -4,12 +4,14 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <meta name='viewport' content='initial-scale=1, width=device-width' />
-        <meta name='description' content='track your favorite tv shows' />
         <link
           rel='stylesheet'
           href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
         />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,700&display=swap'
+          rel='stylesheet'
+        ></link>
         <link
           rel='stylesheet'
           href='https://fonts.googleapis.com/icon?family=Material+Icons'

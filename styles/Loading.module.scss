@@ -1,0 +1,6 @@
+@use 'styles/variables' as *;
+
+.container {
+  @include flex;
+  height: 90%;
+}

@@ -3,33 +3,48 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #b7cadb;
+  background-color: #c0d8c0;
   padding: 1rem;
 }
 
 .title {
   padding-left: 2rem;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 0.25rem;
   font-variant: small-caps;
-  color: #e45826;
+  background-image: linear-gradient(to right, #553c9a, #ee4b2b);
+  background-size: 200%;
+  background-position: -200%;
+  color: transparent;
+  background-clip: text;
+  animation: animated-gradient 3s infinite alternate-reverse;
+}
+
+@keyframes animated-gradient {
+  to {
+    background-position: 200%;
+  }
 }
 
 .btn-grp {
   height: auto;
+  margin-inline-end: 1rem;
 }
 
-.signup-btn:hover {
-  background-color: #e45826;
-  transition: ease-out 0.5s;
+.signup-btn {
+  background-color: #dd4a48 !important;
 }
 
 .btn {
   padding: 0.6rem;
   margin-inline: 1rem;
-  border-radius: 4px !important;
+  border-radius: 6% !important;
   border-color: rgba(25, 118, 210, 0.5) !important;
-  color: #999999;
-  background: #ffffff;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #dd4a48;
+    transition: ease-out 0.5s;
+  }
 }

@@ -1,29 +1,28 @@
-import Head from 'next/head';
 import { useState, useEffect } from 'react';
-import styles from '../styles/Home.module.css';
 import { getUsers } from './api/users';
+import { getPopularShows } from './api/shows';
+import styles from './../styles/Home.module.scss';
+
+//components
+import Hello from './../components/Hello';
+import Loading from '../components/Loading';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
+  const [shows, setShows] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // useEffect(() => {
+  //   getUsers().then((data) => {
+  //     setUsers(data);
+  //   });
+  // }, []);
 
   useEffect(() => {
-    getUsers().then((data) => {
-      setUsers(data);
-    });
+    getPopularShows().then((results) => setShows(results));
+    setIsLoading(false);
   }, []);
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Track Everything</title>
-        <meta name='description' content='track your favorite tv shows' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <main className={styles.main}></main>
-
-      <footer className={styles.footer}></footer>
-    </div>
-  );
+  return <>{isLoading ? <Loading /> : <Hello shows={shows} />}</>;
 };
 
 export default Home;

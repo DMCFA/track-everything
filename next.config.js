@@ -11,6 +11,7 @@ module.exports = {
     storageBucket: process.env.storageBucket,
     messagingSenderId: process.env.messagingSenderId,
     appId: process.env.appId,
+    tmdbApiKey: process.env.tmdbApiKey,
   },
   nextConfig,
 };

@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import styles from './../styles/Nav.module.scss';
 import { Typography, ButtonGroup, Button } from '@mui/material';
 import { useState } from 'react';
@@ -24,9 +25,12 @@ const Nav = () => {
 
   return (
     <div className={styles.container}>
-      <Typography align='left' className={styles.title}>
-        track everything
-      </Typography>
+      <Link href='/' passHref>
+        <Typography align='left' className={styles.title}>
+          track everything
+        </Typography>
+      </Link>
+
       {isLoggedIn ? (
         <ButtonGroup className={styles['btn-grp']}>
           <Button variant='contained' className={styles.btn}>

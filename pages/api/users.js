@@ -1,4 +1,4 @@
-import { db } from '../../firebase-config';
+import { db, firebaseConfig } from '../../firebase-config';
 import {
   addDoc,
   collection,
@@ -41,7 +41,23 @@ export const getOneUser = async (id) => {
 // @route    POST "/"
 // @desc.    Create a contact
 // @access   Public
-export const createUser = async (data) => {
+export const createUser = (data) => {
+  const {username, email, password} = data
+  return async () => {
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password)
+      firebase.fires
+      // await addDoc(usersRef, data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+};
+
+// @route    POST "/"
+// @desc.    Login
+// @access   Public
+export const userLogin = async (data) => {
   try {
     await addDoc(usersRef, data);
   } catch (error) {

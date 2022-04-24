@@ -17,6 +17,10 @@ body > div:first-child {
   background-color: $background-color;
 }
 
+main {
+  min-height: 84.16vh;
+}
+
 a {
   color: inherit;
   text-decoration: none;

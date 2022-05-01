@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import { getUsers } from './api/users';
 import { getPopularShows } from './api/shows';
 import styles from './../styles/Home.module.scss';
@@ -8,15 +8,8 @@ import Hello from './../components/Hello';
 import Loading from '../components/Loading';
 
 const Home = () => {
-  const [users, setUsers] = useState([]);
   const [shows, setShows] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   getUsers().then((data) => {
-  //     setUsers(data);
-  //   });
-  // }, []);
 
   useEffect(() => {
     getPopularShows().then((results) => setShows(results));

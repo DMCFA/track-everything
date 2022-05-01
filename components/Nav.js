@@ -2,11 +2,11 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from './../styles/Nav.module.scss';
 import { Typography, ButtonGroup, Button } from '@mui/material';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 const Nav = () => {
   const router = useRouter();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const isLoggedIn = useContext(LoggedInContext);
 
   const handleLogin = (e) => {
     e.preventDefault();

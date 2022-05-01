@@ -8,6 +8,8 @@ import {
   getDocs,
   updateDoc,
 } from 'firebase/firestore';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase-config';
 
 const usersRef = collection(db, 'users');
 
@@ -41,16 +43,12 @@ export const getOneUser = async (id) => {
 // @route    POST "/"
 // @desc.    Create a contact
 // @access   Public
-export const createUser = (data) => {
-  const {username, email, password} = data
-  return async () => {
-    try {
-      await firebase.auth().createUserWithEmailAndPassword(email, password)
-      firebase.fires
-      // await addDoc(usersRef, data);
-    } catch (error) {
-      console.log(error);
-    }
+export const createUser = async (email, password) => {
+  try {
+    const user = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(user);
+  } catch (error) {
+    console.log(error.message);
   }
 };
 
@@ -58,6 +56,17 @@ export const createUser = (data) => {
 // @desc.    Login
 // @access   Public
 export const userLogin = async (data) => {
+  try {
+    await addDoc(usersRef, data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// @route    POST "/"
+// @desc.    Login
+// @access   Public
+export const userLogout = async (data) => {
   try {
     await addDoc(usersRef, data);
   } catch (error) {

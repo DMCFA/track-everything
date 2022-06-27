@@ -1,10 +1,12 @@
-// import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import styles from './../styles/Login.module.scss';
 import { FormGroup, Input, Button } from '@mui/material';
+import { userLogin } from './api/users';
 
 const Login = () => {
-  const handleChange = (e) => console.log(e.target.value);
-  const handleSubmit = (e) => console.log(e);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const handleSubmit = userLogin(email, password);
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
@@ -14,9 +16,14 @@ const Login = () => {
             autoFocus
             required
             placeholder='Email goes here'
-            onChange={handleChange}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <Input type='password' required placeholder='Your password' />
+          <Input
+            type='password'
+            required
+            placeholder='Your password'
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <Button className={styles.button}>Login</Button>
         </FormGroup>
       </form>

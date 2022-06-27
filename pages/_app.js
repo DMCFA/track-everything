@@ -1,11 +1,15 @@
 import Layout from './../components/Layout';
 import '../styles/globals.scss';
+import React, { createContext, useState } from 'react';
+import { auth, onAuthStateChanged } from 'firebase/auth';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <React.StrictMode>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </React.StrictMode>
   );
 }
 

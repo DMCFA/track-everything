@@ -1,5 +1,4 @@
-import { useState, useEffect, createContext } from 'react';
-import { getUsers } from './api/users';
+import { useState, useEffect, useContext } from 'react';
 import { getPopularShows } from './api/shows';
 import styles from './../styles/Home.module.scss';
 

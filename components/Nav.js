@@ -4,19 +4,22 @@ import styles from './../styles/Nav.module.scss';
 import { Typography, ButtonGroup, Button } from '@mui/material';
 import { loggedInUser } from '../pages/api/context';
 import { useContext } from 'react';
+import { auth } from '../firebase-config';
+import { signOut } from 'firebase/auth';
 
 const Nav = () => {
   const router = useRouter();
-  const user = useContext(loggedInUser);
+  const { user, setUser } = useContext(loggedInUser);
 
   const handleLogin = (e) => {
     e.preventDefault();
     router.push('/login');
   };
 
-  const handleLogout = (e) => {
+  const handleLogout = async (e) => {
     e.preventDefault();
-    setIsLoggedIn(false);
+    await signOut(auth);
+    setUser(null);
   };
 
   const handleSignUp = (e) => {
@@ -31,7 +34,7 @@ const Nav = () => {
           track everything
         </Typography>
       </Link>
-      {user != null ? (
+      {user != null || undefined ? (
         <ButtonGroup className={styles['btn-grp']}>
           <Button variant='contained' className={styles.btn}>
             my shows

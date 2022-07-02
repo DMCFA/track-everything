@@ -2,14 +2,29 @@ import { useState } from 'react';
 import styles from './../styles/Login.module.scss';
 import { FormGroup, Input, Button } from '@mui/material';
 import { userLogin } from './api/users';
+import { useRouter } from 'next/router';
 
 const Login = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const handleSubmit = userLogin(email, password);
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await userLogin(email, password);
+      setEmail('');
+      setPassword('');
+      router.push('/');
+    } catch (error) {
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit}>
+      <form>
         <FormGroup className={styles['input-group']}>
           <Input
             type='email'
@@ -24,7 +39,9 @@ const Login = () => {
             placeholder='Your password'
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button className={styles.button}>Login</Button>
+          <Button className={styles.button} onClick={(e) => handleSubmit(e)}>
+            Login
+          </Button>
         </FormGroup>
       </form>
     </div>

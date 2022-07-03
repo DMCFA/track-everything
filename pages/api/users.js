@@ -1,4 +1,4 @@
-import { db, firebaseConfig } from '../../firebase-config';
+import { db, auth } from '../../firebase-config';
 import {
   addDoc,
   collection,
@@ -12,7 +12,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import { auth } from '../../firebase-config';
 
 const usersRef = collection(db, 'users');
 
@@ -21,6 +20,7 @@ export const createUser = async (email, password) => {
   try {
     const req = await createUserWithEmailAndPassword(auth, email, password);
     const user = req.user;
+    console.log(user);
     addUserToDB(user);
   } catch (error) {
     console.log(error.message);
@@ -31,10 +31,9 @@ export const createUser = async (email, password) => {
 export const addUserToDB = async (user) => {
   const { email, uid } = user;
   try {
-    const docRef = await addDoc((db, 'users'), {
+    const docRef = await addDoc(collection(db, 'users'), {
       email: email,
-      id: uid,
-      docID: docRef.id,
+      authId: uid,
       shows: [],
     });
   } catch (error) {
@@ -59,6 +58,7 @@ export const getUsers = async () => {
   try {
     const res = await getDocs(usersRef);
     const data = res.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error);

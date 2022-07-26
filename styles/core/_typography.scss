@@ -74,6 +74,7 @@ h3 {
   @include h3Style;
 }
 
-p {
+p,
+span {
   @include bodyTextStyle;
 }

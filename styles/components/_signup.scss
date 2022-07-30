@@ -1,0 +1,19 @@
+.signup {
+  &__container {
+    @include flex(column);
+  }
+
+  &__email,
+  &__username,
+  &__password {
+    @include flex(column);
+  }
+
+  &__buttons {
+    @include flex(row);
+  }
+
+  &__submit {
+    @include main-button($primary-color);
+  }
+}

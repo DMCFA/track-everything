@@ -2,10 +2,15 @@
 
 //Core
 @import './core/base';
+@import './core/styleguide';
+@import './core/typography';
+@import './core/mixin';
+@import './core/forms';
 
 //Pages
 
 //Components
+@import './components/signup.scss';
 
 //Snippets
 

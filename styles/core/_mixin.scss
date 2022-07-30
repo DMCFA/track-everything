@@ -1,0 +1,25 @@
+@mixin main-button($bg) {
+  @include bodyTextStyle;
+  font-size: 1.4rem !important;
+  all: unset;
+  background-color: $bg;
+  color: $white;
+  margin: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: $secondary-color;
+    transition: all 0.3s ease-out;
+  }
+}
+
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}

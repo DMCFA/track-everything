@@ -8,6 +8,10 @@ const SignupForm = (): JSX.Element => {
   return (
     <div className='signup'>
       <div className='signup__container'>
+        <div className='signup__title'>
+          <span>Join </span>
+          <span>Track Everything</span>
+        </div>
         <form action='' method='post'>
           <div className='signup__username'>
             <label htmlFor=''>Username</label>
@@ -25,7 +29,9 @@ const SignupForm = (): JSX.Element => {
             <span className='validation-password'></span>
           </div>
           <div className='signup__buttons'>
-            <button type='submit'>Register</button>
+            <button className='signup__submit' type='submit'>
+              Register
+            </button>
             <a href='\' className='signup__login'>
               Login
             </a>

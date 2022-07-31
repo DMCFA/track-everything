@@ -3,6 +3,28 @@
     @include flex(column);
   }
 
+  &__title {
+    margin-bottom: 2rem;
+
+    span {
+      @include h3Style;
+      font-variant: unset;
+    }
+
+    :first-child {
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+
+    :last-child {
+      font-variant: small-caps;
+      background-image: linear-gradient(to left, #553c9a, #ee4b2b);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
   &__email,
   &__username,
   &__password {

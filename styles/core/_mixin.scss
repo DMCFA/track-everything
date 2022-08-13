@@ -1,5 +1,5 @@
 @mixin main-button($bg) {
-  @include bodyTextStyle;
+  @include body-text-style;
   font-size: 1.4rem !important;
   all: unset;
   background-color: $bg;

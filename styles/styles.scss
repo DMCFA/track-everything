@@ -1,19 +1,20 @@
 @import './common';
 
-//Core
+// Core
 @import './core/base';
 @import './core/styleguide';
 @import './core/typography';
 @import './core/mixin';
 @import './core/forms';
 
-//Pages
+// Pages
 
-//Components
-@import './components/signup.scss';
+// Components
+@import './components/signup';
+@import './components/login';
 
-//Snippets
+// Snippets
 
-//Banners
+// Banners
 
-//Widgets
+// Widgets

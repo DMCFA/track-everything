@@ -82,8 +82,8 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
@@ -103,6 +103,7 @@ section {
 
 body {
   line-height: 1;
+  background-color: #eee;
 }
 
 ol,
@@ -115,10 +116,10 @@ q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: '';
   content: none;
 }
@@ -126,11 +127,6 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 main {
@@ -151,24 +147,6 @@ footer {
   align-items: center;
 }
 
-a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
 * {
   box-sizing: border-box;
 }
-
-$breakpoints: (
-  'screen-xs': 480px,
-  'screen-sm': 768px,
-  'screen-md': 991px,
-  'screen-tablet': 1180px,
-  'screen-lg': 1366px,
-  'screen-xl': 1600px,
-);
-
-@import './include-media';

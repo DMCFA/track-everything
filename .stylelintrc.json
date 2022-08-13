@@ -1,0 +1,9 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
+  "rules": {
+    "string-quotes": null,
+    "declaration-empty-line-before": null,
+    "alpha-value-notation": null,
+    "import-notation": null
+  }
+}

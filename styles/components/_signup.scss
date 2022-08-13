@@ -1,6 +1,15 @@
 .signup {
+  display: flex;
+  justify-content: center;
+
   &__container {
     @include flex(column);
+
+    width: 70%;
+    padding: 2rem 1rem;
+    background-color: $white;
+    border: 1px solid rgba(0 0 0 0.1);
+    box-shadow: 4px 0 19px 4px rgba(0 0 0 0.24);
   }
 
   &__title {
@@ -20,7 +29,6 @@
       font-variant: small-caps;
       background-image: linear-gradient(to left, #553c9a, #ee4b2b);
       color: transparent;
-      -webkit-background-clip: text;
       background-clip: text;
     }
   }

@@ -14,4 +14,7 @@ module.exports = {
     tmdbApiKey: process.env.tmdbApiKey,
   },
   nextConfig,
+  eslint: {
+    dirs: ['components', 'pages', 'styles', 'ts'],
+  },
 };

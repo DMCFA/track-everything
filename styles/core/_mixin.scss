@@ -23,3 +23,50 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin fontawesome {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+
+@mixin fontawesome-icon {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+}
+
+@mixin fontawesome-brand {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin icon($icon) {
+  @include fontawesome;
+
+  @if $icon == 'brand' {
+    @include fontawesome-brand;
+  }
+
+  @if $icon == 'icon' {
+    @include fontawesome-icon;
+  }
+}
+
+@mixin validation-icon($type) {
+  content: '\f00c';
+  position: absolute;
+  right: -1.2rem;
+  top: -1rem;
+  color: $success;
+
+  @if $type == 'error' {
+    content: '\f00d';
+    color: $error;
+  }
+}

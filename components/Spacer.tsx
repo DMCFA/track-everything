@@ -1,9 +1,9 @@
-interface props {
+interface Props {
   height: string;
 }
 
-const Spacer = ({ height }: props): JSX.Element => {
-  return <div className='spacer' style={{ height: height }}></div>;
-};
+function Spacer({ height }: Props): JSX.Element {
+  return <div className='spacer' style={{ height }} />;
+}
 
 export default Spacer;

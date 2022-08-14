@@ -3,6 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
+const StylelintPlugin = require('stylelint-webpack-plugin');
+
 module.exports = {
   env: {
     apiKey: process.env.apiKey,
@@ -12,6 +14,10 @@ module.exports = {
     messagingSenderId: process.env.messagingSenderId,
     appId: process.env.appId,
     tmdbApiKey: process.env.tmdbApiKey,
+  },
+  webpack: (config, options) => {
+    config.plugins.push(new StylelintPlugin());
+    return config;
   },
   nextConfig,
   eslint: {

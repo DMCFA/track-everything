@@ -63,6 +63,8 @@ $font-weight-heading: 600;
 }
 
 @mixin link-style {
+  font-family: $font-primary;
+  font-size: $body-font-size-sm;
   display: flex;
   justify-content: center;
   align-items: center;

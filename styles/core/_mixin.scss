@@ -1,5 +1,6 @@
 @mixin main-button($bg) {
   @include body-text-style;
+  font-family: $font-primary !important;
   font-size: 1.4rem !important;
   all: unset;
   background-color: $bg;

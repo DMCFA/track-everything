@@ -1,5 +1,47 @@
 label {
   font-family: $font-primary;
   font-size: 0.9rem;
+  display: flex;
+  flex-flow: column wrap;
+
+  input {
+    margin-top: 1px;
+  }
+}
+
+span {
+  font-size: 0.8rem;
+  font-weight: 600;
   align-self: baseline;
+}
+
+.validation {
+  position: relative;
+  max-width: fit-content;
+  align-self: baseline;
+  line-height: 1.5;
+}
+
+.validated {
+  &::after {
+    @include icon(icon);
+    @include validation-icon(default);
+  }
+}
+
+.validated-outline {
+  outline: 1px solid $success;
+  border-color: transparent;
+}
+
+.error-outline {
+  outline: 1px solid $error;
+  border-color: transparent;
+}
+
+.validation-error {
+  &::after {
+    @include icon(icon);
+    @include validation-icon('error');
+  }
 }

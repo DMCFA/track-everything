@@ -1,8 +1,4 @@
-// interface SignUpProps {
-//   username: string;
-//   email: string;
-//   password: string;
-// }
+import { validateUsername } from '../ts/Validation';
 
 const SignupForm = (): JSX.Element => {
   return (
@@ -14,23 +10,33 @@ const SignupForm = (): JSX.Element => {
         </div>
         <form action='' method='post'>
           <div className='signup__username'>
-            <label htmlFor=''>Username</label>
-            <input type='text' />
-            <span className='validation-username'></span>
+            <label htmlFor='user'>
+              Username
+              <input
+                type='text'
+                id='user'
+                onChange={(e) => validateUsername(e.target.value)}
+              />
+            </label>
+            <span className='validation-username validation' />
           </div>
           <div className='signup__email'>
-            <label htmlFor=''>Email</label>
-            <input type='email' name='' id='' />
-            <span className='validation-email'></span>
+            <label htmlFor='email'>
+              Email
+              <input type='email' name='' id='email' />
+            </label>
+            <span className='validation-email validation' />
           </div>
           <div className='signup__password'>
-            <label htmlFor=''>Password</label>
-            <input type='password' name='' id='' />
-            <span className='validation-password'></span>
+            <label htmlFor='password'>
+              Password
+              <input type='password' name='' id='password' />
+            </label>
+            <span className='validation-password validation' />
           </div>
           <div className='signup__buttons'>
             <button className='signup__submit' type='submit'>
-              Register
+              register
             </button>
             <a href='\' className='signup__login'>
               Login

@@ -8,15 +8,15 @@
     width: 70%;
     padding: 2rem 1rem;
     background-color: $white;
-    border: 1px solid rgba(0 0 0 0.1);
-    box-shadow: 4px 0 19px 4px rgba(0 0 0 0.24);
+    border: 1px solid rgba(0 0 0 / 0.1);
+    box-shadow: 4px 0 19px 4px rgba(0 0 0 / 0.24);
   }
 
   &__title {
     margin-bottom: 2rem;
 
     span {
-      @include h3Style;
+      @include h3-style;
       font-variant: unset;
     }
 
@@ -41,9 +41,19 @@
 
   &__buttons {
     @include flex(row);
+    font-variant: small-caps;
   }
 
   &__submit {
     @include main-button($primary-color);
+  }
+
+  &__login {
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      color: $primary-title;
+      transition: all 0.3s ease-out;
+    }
   }
 }

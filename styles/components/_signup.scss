@@ -39,6 +39,22 @@
     @include flex(column);
   }
 
+  &__terms {
+    display: inline-flex;
+  }
+
+  &__agree {
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  &__terms-link {
+    font-size: 0.8rem;
+    padding-left: 0.1rem;
+    text-decoration: underline;
+  }
+
   &__buttons {
     @include flex(row);
     font-variant: small-caps;

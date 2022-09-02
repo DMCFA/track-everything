@@ -34,6 +34,21 @@ const SignupForm = (): JSX.Element => {
             </label>
             <span className='validation-password validation' />
           </div>
+          <div className='signup__terms'>
+            <label htmlFor='terms'>
+              <input type='checkbox' name='' id='terms' />
+            </label>
+            <span className='signup__agree'>
+              I agree with the
+              <a
+                href='/'
+                aria-label='terms and conditions'
+                className='signup__terms-link'
+              >
+                Terms &#38; Conditions
+              </a>
+            </span>
+          </div>
           <div className='signup__buttons'>
             <button className='signup__submit' type='submit'>
               register

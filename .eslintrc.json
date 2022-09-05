@@ -7,6 +7,8 @@
     "linebreak-style": "off",
     "arrow-body-style": "off",
     "react/react-in-jsx-scope": "off",
+    "react/jsx-indent": "off",
+    "@typescript-eslint/indent": "off",
     "react/function-component-definition": "off",
     "jsx-quotes": "off",
     "import/prefer-default-export": "off",

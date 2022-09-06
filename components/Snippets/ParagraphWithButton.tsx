@@ -6,20 +6,20 @@ const ParagraphWithButton = (): JSX.Element => {
           <h1>
             Start tracking
             <br />
-            Your favorite
-            <br />
-            TV Shows
+            your favorite
           </h1>
+          <br />
+          <h1 className='last'>TV shows</h1>
         </div>
         <div className='paragraph-with-button__paragraph'>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam
-            nobis quo molestias praesentium deserunt sunt?
+            No subscription needed, create an account today and starting adding
+            shows.
           </p>
         </div>
         <div className='paragraph-with-button__button'>
           <a href='/login' className='paragraph-with-button__login'>
-            Start tracking
+            Start today
           </a>
         </div>
       </div>

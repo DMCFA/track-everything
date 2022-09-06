@@ -18,11 +18,7 @@ const Nav = (): JSX.Element => {
         </Link>
         <div className='primary-nav__items-container'>
           <div className='primary-nav__item popular'>
-            <a
-              href='/popular'
-              className={`primary-nav__item-link ${isActive ? 'active' : ''}`}
-              onClick={toggleClass}
-            >
+            <a href='/popular' className='primary-nav__item-link'>
               Popular
             </a>
           </div>
@@ -41,6 +37,17 @@ const Nav = (): JSX.Element => {
           <a href='/signup' className='primary-nav__account-link'>
             Create Account
           </a>
+        </div>
+        <div
+          className={`primary-nav__mobile ${isActive ? 'open' : ''}`}
+          onClick={toggleClass}
+          onKeyDown={toggleClass}
+          role='button'
+          tabIndex={0}
+        >
+          <span className='icon' />
+          <span className='icon' />
+          <span className='icon' />
         </div>
       </div>
     </nav>

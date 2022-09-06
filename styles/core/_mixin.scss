@@ -18,6 +18,45 @@
   }
 }
 
+@mixin homepage-button {
+  font-size: 1.1rem;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    background: linear-gradient(60deg, #553c9a, #ee4b2b) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    mask-composite: exclude;
+    padding: 0.5rem 0.8rem;
+  }
+
+  &:hover {
+    &::before {
+      background-size: 300% 300%;
+      animation: rotate 2s ease alternate infinite;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @mixin flex($direction) {
   display: flex;
   flex-direction: $direction;
@@ -69,5 +108,15 @@
   @if $type == 'error' {
     content: '\f00d';
     color: $error;
+  }
+}
+
+@mixin content-container($size) {
+  padding: 0 2rem;
+  margin: 0 auto;
+  max-width: 90rem;
+
+  @if $size == 'md' {
+    max-width: 110rem;
   }
 }

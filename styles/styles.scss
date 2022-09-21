@@ -1,13 +1,17 @@
 @import './common';
 
 // Core
-@import './core/base';
 @import './core/styleguide';
+@import './core/base';
 @import './core/typography';
 @import './core/mixin';
 @import './core/forms';
 
+// Layout
+@import './layout/header';
+
 // Pages
+@import './pages/homepage';
 
 // Components
 @import './components/signup';
@@ -15,6 +19,7 @@
 
 // Snippets
 @import './snippets/three-col';
+@import './snippets/paragraph-with-button';
 
 // Banners
 

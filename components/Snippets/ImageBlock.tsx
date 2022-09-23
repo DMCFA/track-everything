@@ -7,10 +7,11 @@ const ImageBlock = ({ shows }: Props): JSX.Element => {
     return (
       <div className='image-block__card' key={item.id}>
         <img
+          className='image-block__img'
           src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
           alt=''
-          height='280px'
-          width='250px'
+          height='230px'
+          width='200px'
         />
       </div>
     );

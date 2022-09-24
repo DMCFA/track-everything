@@ -3,11 +3,11 @@ interface Props {
 }
 
 const ImageBlock = ({ shows }: Props): JSX.Element => {
-  const showImages = shows.slice(0, 6).map((item: any) => {
+  const showImages = shows.slice(0, 6).map((item: any): JSX.Element => {
     return (
       <div className='image-block__card' key={item.id}>
         <img
-          className='image-block__img'
+          className='image-block__img skeleton'
           src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
           alt=''
           height='230px'
@@ -16,6 +16,7 @@ const ImageBlock = ({ shows }: Props): JSX.Element => {
       </div>
     );
   });
+
   return (
     <section className='image-block'>
       <div className='image-block__container'>{showImages}</div>

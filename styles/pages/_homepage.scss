@@ -1,0 +1,15 @@
+.homepage {
+  &__main-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@include media('>=screen-md') {
+  .homepage {
+    &__above-container {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

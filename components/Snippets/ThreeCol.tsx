@@ -36,10 +36,10 @@ const ThreeCol = () => {
             />
           </figure>
           <div className='three-col__text'>
-            <h3>Start Tracking Today</h3>
+            <h3>See which shows others are watching</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-              pariatur.
+              See today's most popular shows and what's trending with other
+              users
             </p>
           </div>
           <div className='three-col__button'>
@@ -49,17 +49,25 @@ const ThreeCol = () => {
           </div>
         </div>
         <div className='three-col__individual-container third'>
-          <div className='three-col__logo' />
+          <figure className='three-col__img-container'>
+            <img
+              className='three-col__img'
+              alt=''
+              src='/three-column-television.png'
+              height={150}
+              width={80}
+            />
+          </figure>
           <div className='three-col__text'>
-            <h3>Start Tracking Today</h3>
+            <h3>Add your favorite shows</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-              pariatur.
+              List your favorite shows and get notifications when a new episode
+              is available
             </p>
           </div>
           <div className='three-col__button'>
             <a href='/login' className='three-col__cta'>
-              Create an Account
+              Start Adding Shows
             </a>
           </div>
         </div>

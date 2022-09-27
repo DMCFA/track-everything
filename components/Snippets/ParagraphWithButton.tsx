@@ -3,11 +3,7 @@ const ParagraphWithButton = (): JSX.Element => {
     <section className='paragraph-with-button'>
       <div className='paragraph-with-button__container'>
         <div className='paragraph-with-button__heading'>
-          <h1>
-            Start tracking
-            <br />
-            your favorite
-          </h1>
+          <h1>Start tracking your favorite</h1>
           <br />
           <h1 className='last'>TV shows</h1>
         </div>

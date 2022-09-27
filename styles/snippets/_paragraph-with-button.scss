@@ -1,8 +1,56 @@
+.paragraph-with-button {
+  &__container {
+    padding: 0 2rem;
+    @include flex(column);
+    text-align: center;
+  }
+
+  &__heading {
+    h1 {
+      color: $white;
+      font-size: 2rem;
+
+      &.last {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__paragraph {
+    margin-top: 1rem;
+
+    p {
+      color: $grey;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+
+  &__button {
+    position: relative;
+    width: fit-content;
+    margin-top: 1rem;
+    color: $white;
+    font-weight: 300;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      color: $orange;
+      transition: all 0.3s ease-in;
+    }
+  }
+
+  &__login {
+    @include homepage-button;
+  }
+}
+
 @include media('>=screen-md') {
   .paragraph-with-button {
     @include content-container(md);
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    align-items: start;
 
     &__container {
       grid-column: 2 / span 4;
@@ -10,12 +58,7 @@
 
     &__heading {
       h1 {
-        color: $white;
         font-size: 4rem;
-
-        &.last {
-          color: $primary-color;
-        }
       }
     }
 
@@ -24,29 +67,13 @@
       width: 80%;
 
       p {
-        color: $grey;
         font-size: 1.2rem;
-        font-weight: 300;
       }
     }
 
     &__button {
-      position: relative;
-      width: fit-content;
       margin-top: 3rem;
-      color: $white;
-      font-weight: 300;
       margin-left: 1rem;
-      transition: all 0.3s ease-in;
-
-      &:hover {
-        color: $orange;
-        transition: all 0.3s ease-in;
-      }
-    }
-
-    &__login {
-      @include homepage-button;
     }
   }
 }

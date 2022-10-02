@@ -1,12 +1,38 @@
-import { validateUsername } from '../ts/Validation';
-
 const SignupForm = (): JSX.Element => {
   return (
     <div className='signup'>
       <div className='signup__container'>
         <div className='signup__title'>
-          <span>Join </span>
-          <span>Track Everything</span>
+          <div className='signup__back'>
+            <button
+              className='signup__back-btn'
+              name='back'
+              type='button'
+              aria-label='click to go back to the homepage'
+            />
+          </div>
+          <h2>Sign up</h2>
+        </div>
+        <div className='signup__social'>
+          <p>Sign up with one of the following options</p>
+          <div className='signup__social-btn'>
+            <button
+              className='signup__google'
+              name='google'
+              type='button'
+              aria-label='sign up with Google'
+            >
+              Sign up with Google
+            </button>
+            <button
+              className='signup__apple'
+              name='apple'
+              type='button'
+              aria-label='sign up with Apple'
+            >
+              Sign Up with Apple
+            </button>
+          </div>
         </div>
         <form action='' method='post'>
           <div className='signup__username'>
@@ -15,10 +41,10 @@ const SignupForm = (): JSX.Element => {
               <input
                 type='text'
                 id='user'
-                onChange={(e) => validateUsername(e.target.value)}
+                onChange={(e) => console.log(e.target.value)}
               />
             </label>
-            <span className='validation-username validation' />
+            <span className='validation-username validation validated' />
           </div>
           <div className='signup__email'>
             <label htmlFor='email'>
@@ -49,12 +75,15 @@ const SignupForm = (): JSX.Element => {
               </a>
             </span>
           </div>
-          <div className='signup__buttons'>
+          <div className='signup__button'>
             <button className='signup__submit' type='submit'>
-              register
+              Create Account
             </button>
-            <a href='\' className='signup__login'>
-              Login
+          </div>
+          <div className='signup__login'>
+            <p>Already have an account?</p>
+            <a href='\' className='signup__login-btn'>
+              Log in
             </a>
           </div>
         </form>

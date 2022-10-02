@@ -9,6 +9,18 @@ label {
   }
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px $box-background inset !important;
+}
+
+form input[type='text'] {
+  padding-left: 0.5rem;
+  color: $white;
+}
+
 span {
   font-size: 0.8rem;
   font-weight: 600;
@@ -26,6 +38,14 @@ span {
   &::after {
     @include icon(icon);
     @include validation-icon(default);
+    right: 0.8rem;
+    top: 2rem;
+    color: $white;
+    background-color: #383736;
+    padding: 0.2rem;
+    padding-bottom: 0.1rem;
+    border: 1px solid #383736;
+    border-radius: 5px;
   }
 }
 

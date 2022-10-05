@@ -1,3 +1,153 @@
 .login {
-  display: flex;
+  &__container {
+    @include flex(column);
+    padding: 4rem 2rem 1rem;
+  }
+
+  &__title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    h2 {
+      color: $white;
+      text-transform: none;
+    }
+  }
+
+  &__back {
+    margin-right: 1rem;
+  }
+
+  &__back-btn {
+    @include main-button(transparent);
+    border: 1px solid rgba(255 255 255 / 0.2);
+    border-radius: 0.5rem;
+    font-size: 0.9rem !important;
+    margin: 0;
+
+    &::before {
+      @include icon(icon);
+      content: '\f053';
+    }
+  }
+
+  &__social {
+    margin-top: 2rem;
+    width: 100%;
+
+    p {
+      color: $white;
+      font-size: 0.9rem;
+      font-weight: 300;
+      text-align: left;
+    }
+  }
+
+  &__social-btn {
+    display: flex;
+
+    > button {
+      @include main-button($box-background);
+      font-size: 0 !important;
+      width: 50%;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      margin: 0;
+
+      &:first-child {
+        margin-right: 1rem;
+      }
+
+      &::before {
+        @include icon(brand);
+        font-size: 1.8rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__google {
+    &::before {
+      content: '\f1a0';
+    }
+  }
+
+  &__apple {
+    &::before {
+      content: '\f179';
+    }
+  }
+
+  form {
+    margin-top: 2.5rem;
+    width: 100%;
+  }
+
+  &__email,
+  &__password {
+    display: flex;
+    color: $white;
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    label {
+      width: 100%;
+    }
+
+    input {
+      all: unset;
+      height: 2.5rem;
+      background-color: $box-background;
+      border: 1px solid rgba(255 255 255 / 0.2);
+      border-radius: 0.5rem;
+      margin-top: 0.3rem;
+
+      &:focus {
+        border: 2px solid $primary-color;
+      }
+
+      &::placeholder {
+        padding-left: 0.7rem;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: 100%;
+  }
+
+  &__submit {
+    @include main-button($primary-color);
+    background-image: linear-gradient(to left, #553c9a, #ee4b2b);
+    margin-inline: 0;
+    padding-block: 1rem;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.2rem !important;
+    border-radius: 0.5rem;
+  }
+
+  &__signup {
+    @include flex(row);
+    margin-top: 1rem;
+
+    p {
+      color: $white;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__signup-btn {
+    all: unset;
+    @include body-text-style;
+    color: $white;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
 }

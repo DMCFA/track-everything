@@ -101,6 +101,10 @@ section {
   display: block;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   line-height: 1;
   background-color: $black-body;
@@ -129,24 +133,16 @@ table {
   border-spacing: 0;
 }
 
-// main {
-//   min-height: 100vh;
-//   flex: 1;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// footer {
-//   display: flex;
-//   flex: 1;
-//   padding: 2rem 0;
-//   border-top: 1px solid #eaeaea;
-//   justify-content: center;
-//   align-items: center;
-// }
-
 * {
   box-sizing: border-box;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #c2cfd6;
+  }
+
+  100% {
+    background-color: #f0f3f5;
+  }
 }

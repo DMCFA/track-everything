@@ -5,8 +5,119 @@
   }
 
   &__individual-container {
-    margin-block: 2rem;
-    box-shadow: rgb(50 50 93 / 0.25) 0 13px 27px -5px,
-      rgb(0 0 0 / 0.3) 0 8px 16px -8px;
+    @include flex(column);
+    background-color: rgba(#aebdca, 0.6);
+    margin-block: 4.8rem;
+    border-radius: 1.6rem;
+    transform: rotateX(1deg);
+    box-shadow: 4px 4px 15px 2px rgba(#f0f0f0, 0.15);
+
+    &.second,
+    &.third {
+      > figure {
+        width: 16rem;
+      }
+    }
+
+    &.third {
+      > figure {
+        top: -9.6rem;
+      }
+
+      > div {
+        &:not(:last-child) {
+          top: -7.2rem;
+        }
+      }
+    }
+  }
+
+  &__img-container {
+    position: relative;
+    top: -8rem;
+    width: 32rem;
+    transform: perspective(100rem) rotateY(2deg) rotateX(15deg);
+  }
+
+  &__img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1.6rem;
+  }
+
+  &__text {
+    padding-inline: 1.6rem;
+    position: relative;
+    top: -4.8rem;
+    text-align: center;
+
+    h3 {
+      color: $black-body;
+    }
+
+    p {
+      padding-top: 1.6rem;
+      color: $grey;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__button {
+    position: relative;
+    top: -3.2rem;
+    align-self: center;
+  }
+
+  &__cta {
+    @include main-button($primary-color);
+    font-size: 1.6rem !important;
+    color: $white;
+
+    &:hover {
+      background-color: $black-body;
+    }
+  }
+}
+
+@include media('>=screen-md') {
+  .three-col {
+    @include flex(row);
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(3, 33%);
+      column-gap: 3.2rem;
+    }
+
+    &__individual-container {
+      &.second {
+        > figure {
+          width: 16rem;
+          top: -4.8rem;
+        }
+      }
+
+      &.third {
+        > figure {
+          top: -9.6rem;
+        }
+      }
+    }
+
+    &__img-container {
+      width: 40rem;
+      top: -8.8rem;
+    }
+
+    &__text {
+      h3 {
+        font-size: 2.9rem;
+      }
+
+      p {
+        font-size: 2.2rem;
+      }
+    }
   }
 }

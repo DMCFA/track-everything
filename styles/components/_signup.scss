@@ -1,7 +1,7 @@
 .signup {
   &__container {
     @include flex(column);
-    padding: 4rem 2rem 1rem;
+    padding: 6.4rem 3.2rem 1.6rem;
   }
 
   &__title {
@@ -17,14 +17,14 @@
   }
 
   &__back {
-    margin-right: 1rem;
+    margin-right: 1.6rem;
   }
 
   &__back-btn {
     @include main-button(transparent);
     border: 1px solid rgba(255 255 255 / 0.2);
     border-radius: 0.5rem;
-    font-size: 0.9rem !important;
+    font-size: 1.4rem !important;
     margin: 0;
 
     &::before {
@@ -34,12 +34,12 @@
   }
 
   &__social {
-    margin-top: 2rem;
+    margin-top: 3.2rem;
     width: 100%;
 
     p {
       color: $white;
-      font-size: 0.9rem;
+      font-size: 1.4rem;
       font-weight: 300;
       text-align: left;
     }
@@ -52,17 +52,17 @@
       @include main-button($box-background);
       font-size: 0 !important;
       width: 50%;
-      height: 2.5rem;
-      border-radius: 0.5rem;
+      height: 4rem;
+      border-radius: 0.8rem;
       margin: 0;
 
       &:first-child {
-        margin-right: 1rem;
+        margin-right: 1.6rem;
       }
 
       &::before {
         @include icon(brand);
-        font-size: 1.8rem;
+        font-size: 2.9rem;
         font-weight: 500;
         display: flex;
         justify-content: center;
@@ -83,7 +83,7 @@
   }
 
   form {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
     width: 100%;
   }
 
@@ -93,7 +93,7 @@
     display: flex;
     color: $white;
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.4rem;
 
     label {
       width: 100%;
@@ -101,11 +101,11 @@
 
     input {
       all: unset;
-      height: 2.5rem;
+      height: 4rem;
       background-color: $box-background;
       border: 1px solid rgba(255 255 255 / 0.2);
-      border-radius: 0.5rem;
-      margin-top: 0.3rem;
+      border-radius: 0.8rem;
+      margin-top: 0.5rem;
 
       &:focus {
         border: 2px solid $primary-color;
@@ -114,7 +114,7 @@
   }
 
   input[type='checkbox'] {
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
   }
 
   &__terms {
@@ -132,8 +132,8 @@
   }
 
   &__terms-link {
-    font-size: 0.8rem;
-    padding-left: 0.1rem;
+    font-size: 1.3rem;
+    padding-left: 0.2rem;
     text-decoration: underline;
   }
 
@@ -146,21 +146,21 @@
     @include main-button($primary-color);
     background-image: linear-gradient(to left, #553c9a, #ee4b2b);
     margin-inline: 0;
-    padding-block: 1rem;
+    padding-block: 1.6rem;
     flex-grow: 1;
     text-align: center;
-    font-size: 1.2rem !important;
-    border-radius: 0.5rem;
+    font-size: 1.9rem !important;
+    border-radius: 0.8rem;
   }
 
   &__login {
     @include flex(row);
-    margin-top: 1rem;
+    margin-top: 1.6rem;
 
     p {
       color: $white;
-      font-size: 0.9rem;
-      margin-right: 0.5rem;
+      font-size: 1.4rem;
+      margin-right: 0.8rem;
     }
   }
 
@@ -169,6 +169,6 @@
     @include body-text-style;
     color: $white;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
 }

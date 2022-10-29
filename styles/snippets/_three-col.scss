@@ -2,6 +2,7 @@
   &__container {
     @include flex(column);
     @include content-container(base);
+    padding-inline: 3rem;
   }
 
   &__individual-container {
@@ -11,6 +12,12 @@
     border-radius: 1.6rem;
     transform: rotateX(1deg);
     box-shadow: 4px 4px 15px 2px rgba(#f0f0f0, 0.15);
+
+    &.first {
+      > figure {
+        width: calc(100% - 4rem);
+      }
+    }
 
     &.second,
     &.third {
@@ -35,7 +42,7 @@
   &__img-container {
     position: relative;
     top: -8rem;
-    width: 32rem;
+    max-width: calc(100% - 2rem);
     transform: perspective(100rem) rotateY(2deg) rotateX(15deg);
   }
 
@@ -80,6 +87,25 @@
   }
 }
 
+@include media('>=screen-xs') {
+  .three-col {
+    &__individual-container {
+      max-width: 52rem;
+      max-height: 45rem;
+
+      &.first {
+        > figure {
+          width: 36rem;
+        }
+
+        .text {
+          top: -6rem;
+        }
+      }
+    }
+  }
+}
+
 @include media('>=screen-md') {
   .three-col {
     @include flex(row);
@@ -91,33 +117,95 @@
     }
 
     &__individual-container {
+      height: 38rem;
+      margin-block: 0;
+      justify-content: flex-start;
+
+      &.first {
+        > figure {
+          margin-top: -12rem;
+        }
+
+        img {
+          min-height: 19rem;
+        }
+
+        > div {
+          margin-top: 5.4rem;
+        }
+      }
+
       &.second {
         > figure {
-          width: 16rem;
-          top: -4.8rem;
+          width: 12rem;
         }
       }
 
       &.third {
         > figure {
-          top: -9.6rem;
+          width: 14rem;
+          top: 0;
+          margin-top: -8.5rem;
+        }
+
+        > div {
+          top: 0;
+          margin-top: 2rem;
         }
       }
     }
 
     &__img-container {
-      width: 40rem;
-      top: -8.8rem;
+      width: 30rem;
+      top: 0;
+      margin-top: -9rem;
     }
 
     &__text {
+      position: static;
+      max-height: 16rem;
+      top: 0;
+      margin-top: 5rem;
+
       h3 {
-        font-size: 2.9rem;
+        font-size: 2.7rem;
+        min-height: 5.4rem;
       }
 
       p {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
+    }
+
+    &__button {
+      top: 0;
+      margin-top: 4rem !important;
+    }
+  }
+}
+
+@include media('>=screen-lg') {
+  .three-col {
+    max-width: 120rem;
+    margin-inline: auto;
+
+    &__container {
+      column-gap: 8rem;
+    }
+  }
+}
+
+@include media('>=screen-xl') {
+  .three-col {
+    &__container {
+      max-width: 100rem;
+      column-gap: 15rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__individual-container {
+      width: 35rem;
     }
   }
 }

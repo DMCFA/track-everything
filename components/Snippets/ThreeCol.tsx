@@ -38,8 +38,8 @@ const ThreeCol = () => {
           <div className='three-col__text'>
             <h3>See which shows others are watching</h3>
             <p>
-              See today's most popular shows and what's trending with other
-              users
+              See today&apos;s most popular shows and what&apos;s trending with
+              other users
             </p>
           </div>
           <div className='three-col__button'>

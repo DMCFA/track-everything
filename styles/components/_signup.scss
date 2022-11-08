@@ -1,4 +1,6 @@
 .signup {
+  position: relative;
+
   &__container {
     @include flex(column);
     padding: 6.4rem 3.2rem 1.6rem;
@@ -127,7 +129,7 @@
 
   &__agree {
     display: flex;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     font-weight: 400;
   }
 
@@ -170,5 +172,80 @@
     color: $white;
     font-weight: bold;
     font-size: 1.4rem;
+  }
+
+  &__circle {
+    display: none;
+    background: radial-gradient(circle at 3rem 3rem, $orange, $primary-title);
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+
+    &:nth-child(2) {
+      top: 6rem;
+      right: 2rem;
+      left: unset;
+      background: radial-gradient(circle at 7rem 3rem, $black-body, $black);
+    }
+  }
+}
+
+@include media('>=screen-xs') {
+  .signup {
+    &__container {
+      max-width: 50rem;
+      margin-inline: auto;
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__social-btn {
+      > button {
+        font-size: 1.4rem !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+          justify-content: flex-start;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@include media('>=screen-sm') {
+  .signup {
+    &__container {
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+    }
+
+    &__circle {
+      display: block;
+    }
+
+    &__social-btn {
+      flex-direction: column;
+      gap: 2.4rem;
+
+      & > button {
+        width: 100%;
+        padding: 0.5rem 0;
+      }
+    }
+
+    &__terms {
+      align-self: flex-start;
+    }
   }
 }

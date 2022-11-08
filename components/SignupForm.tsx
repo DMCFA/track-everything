@@ -1,6 +1,8 @@
 const SignupForm = (): JSX.Element => {
   return (
     <div className='signup'>
+      <figure className='signup__circle' />
+      <figure className='signup__circle' />
       <div className='signup__container'>
         <div className='signup__title'>
           <div className='signup__back'>
@@ -22,7 +24,7 @@ const SignupForm = (): JSX.Element => {
               type='button'
               aria-label='sign up with Google'
             >
-              Sign up with Google
+              Continue with Google
             </button>
             <button
               className='signup__apple'
@@ -30,7 +32,7 @@ const SignupForm = (): JSX.Element => {
               type='button'
               aria-label='sign up with Apple'
             >
-              Sign Up with Apple
+              Continue with Apple
             </button>
           </div>
         </div>
@@ -38,13 +40,9 @@ const SignupForm = (): JSX.Element => {
           <div className='signup__username'>
             <label htmlFor='user'>
               Username
-              <input
-                type='text'
-                id='user'
-                onChange={(e) => console.log(e.target.value)}
-              />
+              <input type='text' id='user' />
             </label>
-            <span className='validation-username validation validated' />
+            <span className='validation-username validation' />
           </div>
           <div className='signup__email'>
             <label htmlFor='email'>

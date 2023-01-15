@@ -5,7 +5,7 @@ const Footer = (): JSX.Element => {
         <div className='footer__hero'>
           <div className='footer__subscribe'>
             <h3>No subscription required</h3>
-            <h2>Start tracking shows today</h2>
+            <h2>Start tracking</h2>
             <div className='footer__email-container'>
               <label htmlFor='email'>
                 Email
@@ -41,21 +41,29 @@ const Footer = (): JSX.Element => {
             </div>
           </div>
           <div className='footer__social'>
-            <p>Let&#39s chat!</p>
+            <p>Let&#39;s chat!</p>
             <a href='/'>hi@tracktv.app</a>
             <div className='footer__social-links'>
-              <a href='/' className='footer__social-link facebook'>
-                Facebook
-              </a>
-              <a href='/' className='footer__social-link twitter'>
-                Twitter
-              </a>
-              <a href='/' className='footer__social-link linkedin'>
-                Linkedin
-              </a>
-              <a href='/' className='footer__social-link instagram'>
-                Instagram
-              </a>
+              <a
+                href='/'
+                className='footer__social-link facebook'
+                aria-label=' click to go to facebook page'
+              />
+              <a
+                href='/'
+                className='footer__social-link twitter'
+                aria-label='click to go to twitter page'
+              />
+              <a
+                href='/'
+                className='footer__social-link linkedin'
+                aria-label='click to go to linkedin page'
+              />
+              <a
+                href='/'
+                className='footer__social-link instagram'
+                aria-label='click to go to instagram page'
+              />
             </div>
           </div>
         </div>
